@@ -3,6 +3,7 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     public float targetTime;
+    public float lane;
     private bool hasBeenHit = false;
 
     public void Initialize(float time)
@@ -13,7 +14,7 @@ public class Note : MonoBehaviour
     void Update()
     {
         float timeToTarget = targetTime - GameManager.Instance.GetSongTime();
-        transform.position += Vector3.down * Time.deltaTime;
+        transform.position += -Vector3.forward * Time.deltaTime;
 
         if (!hasBeenHit && timeToTarget < 0)
         {

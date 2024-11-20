@@ -19,6 +19,7 @@ public class NoteSpawner : MonoBehaviour
         GameObject curentnout = Instantiate(notePrefab, spawnPosition, Quaternion.identity);
         Note curentnoutnout = curentnout.GetComponent<Note>();
         curentnoutnout.targetTime = time * 5;
+        curentnoutnout.lane = lane * 2;
     }
 
 }
